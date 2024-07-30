@@ -557,6 +557,7 @@ const HomePage = ({ ischat }) => {
                     user={user}
                     userId={user._id}
                     onclose={() => setviewUsers(false)}
+                    onClick={handleMessageSectionUserClick}
                   />
                 );
               })

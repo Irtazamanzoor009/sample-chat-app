@@ -169,7 +169,8 @@ const HomePage = ({ ischat }) => {
       reconnectionAttempts: 5,
       reconnectionDelay: 1000,
       timeout: 20000,
-      transports: ['websocket']
+      transports: ['websocket'],
+      secure: true
     });
 
     socketConnection.on("onlineUser", (data) => {

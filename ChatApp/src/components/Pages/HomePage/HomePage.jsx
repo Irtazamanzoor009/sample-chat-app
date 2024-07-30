@@ -150,7 +150,7 @@ const HomePage = ({ ischat }) => {
   // socket connection
 
   useEffect(() => {
-    const url = 'https://chat-app-backend-beta-smoky.vercel.app'
+    const url = "wss://chat-app-backend-beta-smoky.vercel.app"
     // const socketConnection = io(url, {
     //   auth: {
     //     token: localStorage.getItem("token"),

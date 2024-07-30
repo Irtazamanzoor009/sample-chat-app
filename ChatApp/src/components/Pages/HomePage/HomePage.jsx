@@ -166,7 +166,7 @@ const HomePage = ({ ischat }) => {
     return () => {
       socketConnection.disconnect();
     };
-  }, []);
+  }, [dispatch]);
 
   //-------------------------
   // form handling functions

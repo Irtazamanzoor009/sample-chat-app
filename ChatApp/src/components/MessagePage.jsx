@@ -48,9 +48,9 @@ const MessagePage = () => {
   }, [allMessages]);
 
   useEffect(() => {
-    console.log("socket connection...............")
+    // console.log("socket connection...............")
     if (socketConnection && params.userId) {
-      console.log("socket connection here...............")
+      // console.log("socket connection here...............")
       socketConnection.emit("messagepage", params.userId);
 
       socketConnection.emit("seen", params.userId);

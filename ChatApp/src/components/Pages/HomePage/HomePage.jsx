@@ -150,10 +150,26 @@ const HomePage = ({ ischat }) => {
   // socket connection
 
   useEffect(() => {
-    const socketConnection = io(import.meta.env.VITE_BACKEND_URL, {
-      auth: {
-        token: localStorage.getItem("token"),
-      },
+    const url = 'https://chat-app-backend-beta-smoky.vercel.app'
+    // const socketConnection = io(url, {
+    //   auth: {
+    //     token: localStorage.getItem("token"),
+    //   },
+    // });
+
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      console.error("No token found");
+      return;
+    }
+
+    const socketConnection = io(url, {
+      auth: { token },
+      reconnectionAttempts: 5,
+      reconnectionDelay: 1000,
+      timeout: 20000,
+      transports: ['websocket']
     });
 
     socketConnection.on("onlineUser", (data) => {
